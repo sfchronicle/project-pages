@@ -18,7 +18,8 @@ module.exports = function(grunt) {
     var seeds = {
       "./src/js/main2015.js": "build/main2015.js",
       "./src/js/main2016.js": "build/main2016.js",
-      "./src/js/main2017.js": "build/main2017.js"
+      "./src/js/main2017.js": "build/main2017.js",
+      "./src/js/main2018.js": "build/main2018.js"
     };
 
     async.forEachOf(seeds, function(dest, src, c) {
