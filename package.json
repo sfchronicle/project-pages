@@ -10,7 +10,7 @@
   "dependencies": {
     "archieml": "^0.3.1",
     "async": "^2.2.0",
-    "babelify": "^6.0.2",
+    "babelify": "^9.0.0",
     "browserify": "^13.0.0",
     "chalk": "^1.0.0",
     "commonmark": "^0.24.0",
@@ -23,7 +23,7 @@
     "grunt-contrib-watch": "^1.0.0",
     "html-entities": "^1.2.0",
     "htmlparser2": "^3.9.0",
-    "less": "^2.6.1",
+    "less": "^3.0.4",
     "mime": "^1.2.11",
     "resolve": "^1.1.7",
     "shelljs": "^0.6.0",
