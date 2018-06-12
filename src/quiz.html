@@ -1,0 +1,30 @@
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>SF Chronicle Quizzes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="//projects.sfchronicle.com/shared/js/responsive-child.js"></script>
+    <script src="//projects.sfchronicle.com/shared/js/jquery.min.js"></script>
+  </head>
+
+  <body is='responsive-body'>
+
+    <div class="proj-container quiz-wrapper">
+      <div class="header">
+        <h1>Chronicle Quizzes</h1>
+        <div class="deck">Think you know more than the newsroom? Challenge yourself with our weekly Chronicle Quizzes on a variety of topics</div>
+      </div>
+        
+      <h2>Latest Quizzes</h2>
+      <div id="best-projects"></div>  
+      <div id="quizzes"></div>
+    </div>
+    <script src="main_quiz.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>
