@@ -6,18 +6,6 @@ $.getJSON("https://extras.sfgate.com/editorial/sheetsdata/quizfeed.json", functi
     return new Date(b['Pub Date']) - new Date(a['Pub Date']);
   });
   console.log("SORTED!", data);
-  // Get all possible categories
-  for (i = 0; i < data.length; i++) {
-    if (categorySet.indexOf(data[i]['Department']) == -1){
-      categorySet.push(data[i]['Department']);
-      var categoryDiv = $("<div>", {
-        class: "section-wrapper " + data[i]['Department'].toLowerCase().split(' ').join('_').split(':').join(''),
-        html: `<h2>${data[i]['Department']}</h2>
-          <div class='quiz-section'></div>`
-      })
-      $("#quizzes").append(categoryDiv);
-    }
-  }
   // Iterate through all rows
   var highlightCount = 0;
   for (i = 0; i < data.length; i++) {
@@ -27,8 +15,14 @@ $.getJSON("https://extras.sfgate.com/editorial/sheetsdata/quizfeed.json", functi
       bylineHTML = `<div class='quiz-byline'>By ${data[i].Byline}</div>`;
     }
 
-    // Only handle if Done? is yes
-    if (typeof data[i]['Done?'] != "undefined" && data[i]['Done?'].toLowerCase() == 'yes'){
+    // Get publish var because it reads in a little weird
+    var shouldPublish = data[i]['Publish to Page'];
+    if (!shouldPublish){
+      shouldPublish = data[i]['Publish to Page '];
+    }
+
+    // Only handle if Publish to Page is yes
+    if (shouldPublish && shouldPublish.toLowerCase() == 'yes'){
       if (highlightCount < 3) {
         // Only show the most recent 3 as highlights
         highlightCount++;
@@ -41,6 +35,17 @@ $.getJSON("https://extras.sfgate.com/editorial/sheetsdata/quizfeed.json", functi
           ${bylineHTML}
         </div>`);     
       } else {
+        // First, make sure there's a place for the item to appear
+        if (categorySet.indexOf(data[i]['Department']) == -1){
+          categorySet.push(data[i]['Department']);
+          var categoryDiv = $("<div>", {
+            class: "section-wrapper " + data[i]['Department'].toLowerCase().split(' ').join('_').split(':').join(''),
+            html: `<h2>${data[i]['Department']}</h2>
+              <div class='quiz-section'></div>`
+          })
+          $("#quizzes").append(categoryDiv);
+        }
+
         $("." + data[i]['Department'].toLowerCase().split(' ').join('_').split(':').join('') + " .quiz-section").append(
         `<div class='proj'>
           <a target='_parent' href='${data[i].URL}'>
@@ -50,8 +55,19 @@ $.getJSON("https://extras.sfgate.com/editorial/sheetsdata/quizfeed.json", functi
           ${bylineHTML}
         </div>`);   
       }
+    }    
+  }
+
+  // Get empty sections
+  var removalArray = [];
+  $(".quiz-section").each(function(index, item){
+    if ($(this).html() == ""){
+      removalArray.push($(this).closest(".section-wrapper"));
     }
-        
+  });
+  // Remove them
+  for (i = 0; i < removalArray.length; i++){
+    removalArray[i].remove();
   }
 
 });
