@@ -5,7 +5,7 @@ $.getJSON("https://extras.sfgate.com/editorial/sheetsdata/quizfeed.json", functi
   data.sort(function(a,b){
     return new Date(b['Pub Date']) - new Date(a['Pub Date']);
   });
-  console.log("SORTED!", data);
+  //console.log(data);
   // Iterate through all rows
   var highlightCount = 0;
   for (i = 0; i < data.length; i++) {
