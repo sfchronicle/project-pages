@@ -81,10 +81,6 @@
 	padding:0;
 	line-height:1.2;
 	color:#333;
-
-	&.quiz-title {
-		margin-top: 10px;
-	}
 }
 .best-proj{
 	.flex(0 0 33%);
@@ -109,8 +105,18 @@
 }
 
 .quiz-wrapper {
+	margin: 30px auto;
+
+	.title{
+		margin-top:5px;
+	}
+
 	#best-projects {
 		margin-bottom: 0;
+	}
+
+	&.proj-container .header img {
+		max-width: 700px;
 	}
 
 	h2 {
@@ -129,6 +135,20 @@
 		@media @mobile {
   		font-size: 11px;
   	}
+	}
+
+	.quiz-department {
+		font-family: @block-graphics;
+    color: @redbold;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    margin-top: 10px;
+    letter-spacing: 1px;
+
+    @media @mobile {
+    	font-size: 11px;
+    }
 	}
 }
 

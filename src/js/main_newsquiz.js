@@ -9,7 +9,7 @@ var array_move = function(arr, old_index, new_index) {
   return arr; // for testing
 };
 
-$.getJSON("https://sfc-project-files.s3.amazonaws.com/project-feeds/sfchronicle_trivia_quiz_schedule_quizzes.json", function(data){
+$.getJSON("https://sfc-project-files.s3.amazonaws.com/project-feeds/sfchronicle_trivia_quiz_schedule_newsquizzes.json", function(data){
   var i = 0;
   var highlightCount = 0;
   var highlightItems = [];
@@ -50,7 +50,6 @@ $.getJSON("https://sfc-project-files.s3.amazonaws.com/project-feeds/sfchronicle_
         `<div class='best-proj'>
           <a target='_parent' href='${data[i].URL}'>
             <div class='img-box' style='background-image:url(${data[i].Thumbnail})'></div>
-            <div class='quiz-department'>${data[i].Department}</div>
             <div class='title quiz-title'>${data[i].Quiz}</div>
           </a>
           ${bylineHTML}
