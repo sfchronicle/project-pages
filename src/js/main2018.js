@@ -6,7 +6,7 @@ $.getJSON("//extras.sfgate.com/editorial/sheetsdata/projectslist2018.json", func
       $("#best-projects").append(
       	"<div class='best-proj'><a target='_parent' href=' " + 
       	data[i].link + "'>" + 
-      	"<div class='img'><img src='"+data[i].wcm_image+"'>" +  
+      	"<div class='img'><svg viewBox='0 0 16 8'></svg><img src='"+data[i].wcm_image+"'></div>" +  
       	"<div class='title'>" + 
       	data[i].title + "</div>" +
       	"</div>"
