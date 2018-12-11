@@ -31,15 +31,17 @@
 	}
 
 	span{
-		font-family:Sanchez;
-		color:red;
+		font-family:@block-graphics;
+		color:@red;
 		letter-spacing:1px;
+		font-weight:600;
 		font-size:16px;
 	}
 
 	.deck{
 		max-width:550px;
 		margin:0 auto 1em;
+		font-family:@block-graphics;
 		font-size:19px;
 		border-bottom:1px solid #ccc;
 		padding-bottom:1em;
@@ -156,7 +158,7 @@
 
 	.quiz-department {
 		font-family: @block-graphics;
-    color: @redbold;
+    color: @red;
     font-size: 12px;
     text-transform: uppercase;
     margin-bottom: 0;
@@ -193,9 +195,13 @@
 
 	.title{
 		font-size:18px;
+		font-family:@block-graphics;
 
 		@media @tablet{
 			font-size:14px;
 		}
 	}
 }
+
+.iframe-wrapper{padding-top:56.25%;position:relative;width:100%;}
+.iframe-container{position:absolute;bottom:0;left:0;right:0;top:0;}
