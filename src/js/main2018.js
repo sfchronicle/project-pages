@@ -1,4 +1,4 @@
-$.getJSON("//extras.sfgate.com/editorial/sheetsdata/projectslist2018.json", function(data){
+$.getJSON("https://sfc-project-files.s3.amazonaws.com/project-feeds/interactive_projects_list_2018.json", function(data){
 
 	for (var i = 0; i < data.length; i++) {
 
