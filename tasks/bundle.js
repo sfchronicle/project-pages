@@ -20,6 +20,7 @@ module.exports = function(grunt) {
       "./src/js/main2016.js": "build/main2016.js",
       "./src/js/main2017.js": "build/main2017.js",
       "./src/js/main2018.js": "build/main2018.js",
+      "./src/js/main2019.js": "build/main2019.js",
       "./src/js/main_quiz.js": "build/main_quiz.js",
       "./src/js/main_newsquiz.js": "build/main_newsquiz.js"
     };
